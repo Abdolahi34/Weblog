@@ -6,8 +6,8 @@ class Article(models.Model):
     Body = models.TextField()
     Slug = models.SlugField()
     DateCreated = models.DateTimeField(auto_now_add=True)
+    Image = models.ImageField(blank=True)
     # Author
-    # Image
 
     def __str__(self):
         return self.Title
