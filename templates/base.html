@@ -2,10 +2,13 @@
 {%block OutHtml%}
 {%endblock%}
 
+{% load static %}
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>{%block Title%}{%endblock%}</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
     {%block Head%}
 
     {%endblock%}

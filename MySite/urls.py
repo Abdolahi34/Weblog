@@ -16,15 +16,16 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from . import views
-from django.contrib.staticfiles.urls import staticfiles_urlpatterns
-from django.conf.urls.static import static
-from django.conf import settings
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns  # for Static Files
+from django.conf.urls.static import static  # for Save Image
+from django.conf import settings  # for Save Image
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.MainPage, name='Main'),
     path('about', views.About, name='About'),
     path('blog/', include('Blog.urls')),
+    path('accounts/', include('Accounts.urls'))
 ]
 
 urlpatterns += staticfiles_urlpatterns()
