@@ -10,13 +10,14 @@ def BlogHome(request):
 def Article(request, Slug):
     ArticleObj = models.Article.objects.all()
     CheckSlug = False
-    for ArticleOne in ArticleObj:
-        if ArticleOne.Slug == Slug:
+    for i in ArticleObj:
+        if i.Slug == Slug:
             CheckSlug = True
+            ArticleSelected = i
             break
     if CheckSlug == True:
-        args = {'ArticleObj': ArticleObj}
+        args = {'ArticleSelected': ArticleSelected}
         return render(request, 'Blog/Article.html', args)
     else:
-        return HttpResponse('404')
+        raise Http404()
 

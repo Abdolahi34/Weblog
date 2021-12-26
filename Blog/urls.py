@@ -6,7 +6,7 @@ app_name = 'Blog'
 
 urlpatterns = [
     path('', views.BlogHome, name='BlogHome'),
-    path('<Slug>', views.Article, name='Article')
+    path('<Slug>', views.Article, name='ArticleSelected')
 ]
 
 urlpatterns += staticfiles_urlpatterns()

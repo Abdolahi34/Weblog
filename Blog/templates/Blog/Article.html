@@ -1,11 +1,15 @@
+{%extends 'base.html'%}
 
+{%load static%}
 
-{%block Title%}{%%}{%endblock%}
+{%block Title%}{{ArticleSelected.Title}}{%endblock%}
 
 {%block Head%}
-
+<link rel="stylesheet" href="{%static 'Blog/style.css'%}">
 {%endblock%}
 
 {%block Body%}
-
+<h1>{{ArticleSelected.Title}}</h1>
+<h2>{{ArticleSelected.Body}}</h2>
+<h3>{{ArticleSelected.DateCreated}}</h3>
 {%endblock%}
