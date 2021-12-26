@@ -18,5 +18,5 @@ def Article(request, Slug):
         args = {'ArticleObj': ArticleObj}
         return render(request, 'Blog/Article.html', args)
     else:
-        return HttpResponse('fvfvfvf')
+        return HttpResponse('404')
 
