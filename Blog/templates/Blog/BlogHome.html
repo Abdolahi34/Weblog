@@ -1,0 +1,27 @@
+{%extends 'base.html'%}
+
+
+{%block OutHtml%}
+{% load static %}
+{%endblock%}
+
+
+{%block Title%}Blog{%endblock%}
+
+
+{%block Head%}
+<link rel="stylesheet" href="{%static 'Blog/style.css'%}">
+{%endblock%}
+
+
+{%block Body%}
+
+<h1>Blog Home Page</h1>
+{% for Article in ArticlesObj %}
+<h2><a href="">{{Article.Title}}</a></h2>
+<h3>{{Article.BodyLittle}}</h3>
+<h4>{{Article.DateCreated}}</h4>
+<p></p>
+{%endfor%}
+
+{%endblock%}
