@@ -1,11 +1,11 @@
 {% extends 'base.html' %}
 
-{% block Title %}SignUp ...{% endblock %}
+{% block Title %}Login ...{% endblock %}
 
 {% block Body %}
 <form action="" method="post">
     {{Form}}
     {% csrf_token %}
-    <input type="submit" value="Submit">
+    <input type="submit" value="Login">
 </form>
-{%endblock%}
+{% endblock %}}

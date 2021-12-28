@@ -8,8 +8,8 @@ from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 app_name = 'Blog'
 
 urlpatterns = [
-    path('', views.BlogHome, name='BlogHome'),
-    path('<Slug>', views.Article, name='ArticleSelected')
+    path('', views.blog_home, name='blog_list'),
+    path('<Slug>', views.article, name='article_selected')
 ]
 
 urlpatterns += staticfiles_urlpatterns()

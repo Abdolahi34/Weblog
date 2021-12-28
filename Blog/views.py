@@ -2,13 +2,13 @@ from django.shortcuts import render, Http404, HttpResponse
 from . import models
 
 
-def BlogHome(request):
-    ArticlesObj = models.Article.objects.all().order_by('DateCreated')
-    args = {'ArticlesObj': ArticlesObj}
+def blog_home(request):
+    articles_obj = models.article.objects.all().order_by('date_created')
+    args = {'articles_obj': articles_obj}
     return render(request, 'Blog/BlogHome.html', args)
 
-def Article(request, Slug):
-    ArticleSelected = models.Article.objects.get(Slug=Slug)
-    args = {'ArticleSelected': ArticleSelected}
+def article(request, Slug):
+    article_selected = models.article.objects.get(Slug=Slug)
+    args = {'article_selected': article_selected}
     return render(request, 'Blog/Article.html', args)
 
