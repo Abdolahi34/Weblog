@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, HttpResponse
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth import login, logout
 
@@ -32,4 +32,9 @@ def login_view(request):
     args = {'form': form}
     return render(request, 'Accounts/Login.html', args)
 
+
+def logout_view(request):
+    if request.method == 'POST':
+        logout(request)
+        return HttpResponse('You are logedout.')
 
