@@ -1,22 +1,21 @@
-{%extends 'base.html'%}
-
-{% load static %}
-
-{%block Title%}Blog{%endblock%}
+{% extends 'Base.html' %}
 
 
-{%block Head%}
-{%endblock%}
+{% block title %}Blog{% endblock %}
 
 
-{%block Body%}
+{% block head %}
+{% endblock %}
+
+
+{% block body %}
 
 <h1>Blog Home Page</h1>
-{% for Article in ArticlesObj %}
-<h2><a href="{%url 'Blog:ArticleSelected' Slug=Article.Slug%}" target="_blank">{{Article.Title}}</a></h2>
-<h3>{{Article.BodyLittle}}</h3>
-<h4>{{Article.DateCreated}}</h4>
+{% for article in articles_obj %}
+<h2><a href="{% url 'Blog:article_selected' slug=article.slug %}" target="_blank">{{ article.title }}</a></h2>
+<h3>{{ article.body_preview }}</h3>
+<h4>{{ article.date_created }}</h4>
 <p></p>
-{%endfor%}
+{% endfor %}
 
-{%endblock%}
+{% endblock %}

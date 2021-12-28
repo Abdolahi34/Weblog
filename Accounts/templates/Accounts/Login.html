@@ -1,11 +1,14 @@
-{% extends 'base.html' %}
+{% extends 'Base.html' %}
 
-{% block Title %}Login ...{% endblock %}
+{% block title %}Login ...{% endblock %}
 
-{% block Body %}
+{% block body %}
 <form action="" method="post">
-    {{Form}}
+    {{ form }}
     {% csrf_token %}
+    {% if 'next' in request.GET %}
+    <input type="hidden" name="next" value="{{ request.GET.next }}">
+    {% endif %}
     <input type="submit" value="Login">
 </form>
-{% endblock %}}
+{% endblock %}

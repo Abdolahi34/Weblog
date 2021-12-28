@@ -1,15 +1,14 @@
-{%extends 'base.html'%}
+{% extends 'Base.html' %}
 
-{%load static%}
 
-{%block Title%}{{ArticleSelected.Title}}{%endblock%}
+{% block title %}{{ article_selected.title }}{% endblock %}
 
-{%block Head%}
-{%endblock%}
+{% block head %}
+{% endblock %}
 
-{%block Body%}
-<h1>{{article_selected.title}}</h1>
-<img src="{{article_selected.image.url}}" alt="">
-<h2>{{article_selected.body}}</h2>
-<h3>{{article_selected.date_created}}</h3>
-{%endblock%}
+{% block body %}
+<h1>{{ article_selected.title }}</h1>
+<img src="{{ article_selected.image.url }}" alt="">
+<h2>{{ article_selected.body }}</h2>
+<h3>{{ article_selected.date_created }}</h3>
+{% endblock %}

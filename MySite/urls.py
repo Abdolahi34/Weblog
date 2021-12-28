@@ -21,11 +21,11 @@ from django.conf.urls.static import static  # for Save Image
 from django.conf import settings  # for Save Image
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('', views.MainPage, name='Main'),
-    path('about', views.About, name='About'),
+    path('', views.main_page, name='main'),
+    path('admin/', admin.site.urls, name='admin'),
+    path('about', views.about, name='about'),
     path('blog/', include('Blog.urls')),
-    path('accounts/', include('Accounts.urls'))
+    path('accounts/', include('Accounts.urls')),
 ]
 
 urlpatterns += staticfiles_urlpatterns()

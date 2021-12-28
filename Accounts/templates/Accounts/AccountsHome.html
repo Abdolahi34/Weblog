@@ -1,10 +1,10 @@
-{% extends 'base.html' %}
+{% extends 'Base.html' %}
 
-{% block Title %}Accounts{% endblock %}
+{% block title %}Accounts{% endblock %}
 
 
-{% block Body %}
+{% block body %}
 <p></p>
-<p><a href="{%url 'Accounts:Signup'%}">SignUp Page</a></p>
-<p><a href="{%url 'Accounts:Login'%}">Login Page</a></p>
+<p><a href="{%url 'Accounts:signup'%}" target="_blank">Signup Page</a></p>
+<p><a href="{%url 'Accounts:login'%}" target="_blank">Login Page</a></p>
 {% endblock %}

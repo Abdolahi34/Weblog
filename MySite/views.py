@@ -1,8 +1,8 @@
-from django.shortcuts import HttpResponse, render
+from django.shortcuts import render
 
-def MainPage(reqquest):
+def main_page(reqquest):
     return render(reqquest, 'MainPage.html')
 
-def About(request):
+def about(request):
     return render(request, 'About.html')
 

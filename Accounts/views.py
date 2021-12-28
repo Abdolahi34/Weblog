@@ -13,7 +13,7 @@ def signup_view(request):
     else:
         form = UserCreationForm()
     args = {'form': form}
-    return render(request, 'Accounts/SignUp.html', args)
+    return render(request, 'Accounts/Signup.html', args)
 
 
 def accounts_home(request):
@@ -26,7 +26,10 @@ def login_view(request):
         if form.is_valid():
             user = form.get_user()
             login(request, user)
-            return redirect('Blog:blog_list')
+            if 'next' in request.POST:
+                return redirect(request.POST.get('next'))
+            else:
+                return redirect('Blog:blog_list')
     else:
         form = AuthenticationForm()
     args = {'form': form}

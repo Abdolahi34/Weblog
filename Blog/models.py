@@ -1,7 +1,7 @@
 from django.db import models
 
 
-class article(models.Model):
+class Article(models.Model):
     title = models.CharField(max_length=50)
     body = models.TextField()
     slug = models.SlugField()
@@ -10,7 +10,7 @@ class article(models.Model):
     # Author
 
     def __str__(self):
-        return self.titleitle
-    def body_little(self):
+        return self.title
+    def body_preview(self):
         return self.body[:50] + ' ...'
 

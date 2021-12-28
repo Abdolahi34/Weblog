@@ -1,20 +1,20 @@
 <!DOCTYPE html>
-{%block OutHtml%}
-{%endblock%}
+{% block out_html %}
+{% endblock %}
 
 {% load static %}
 
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>{%block Title%}{%endblock%}</title>
+    <title>{% block title %}{% endblock %}</title>
     <link rel="stylesheet" href="{% static 'style.css' %}">
-    {%block Head%}
+    {% block head %}
 
-    {%endblock%}
+    {% endblock %}
 </head>
 <body>
-    <h1><a href="{%url 'Main'%}">Logo</a></h1>
+    <h1><a href="{% url 'Blog:blog_list' %}" target="_blank">Logo</a></h1>
     <nav>
         <ul>
             <li>
@@ -26,8 +26,8 @@
         </ul>
     </nav>
     <p></p>
-    {%block Body%}
+    {% block body %}
 
-    {%endblock%}
+    {% endblock %}
 </body>
 </html>

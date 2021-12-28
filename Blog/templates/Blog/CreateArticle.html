@@ -1,8 +1,13 @@
-{% extends 'base.html' %}
+{% extends 'Base.html' %}
 
-{% block Title %}Create Article{% endblock %}
+{% block title %}Create Article{% endblock %}
 
-{% block Body %}
+{% block body %}
 <h1>Create Your Article ...</h1>
+<form action="{% url 'Blog:blog_list' %}" method="post" enctype="multipart/form-data">
+    {{ form }}
+    {% csrf_token %}
+    <input type="submit" value="Create">
+</form>
 {% endblock %}
 
