@@ -7,9 +7,10 @@
 {% endblock %}
 
 {% block body %}
-<h1>{{ article_selected.title }}</h1>
-<img src="{{ article_selected.image.url }}" alt="">
-<h2>{{ article_selected.body }}</h2>
+<h1>{{ article_selected.title }}</h1><br>
+<img src="{{ article_selected.image.url }}" alt=""><br><br>
+<h2>{{ article_selected.body }}</h2><br>
 <h3>Written by: {{ article_selected.author }}</h3>
 <h3>{{ article_selected.date_created }}</h3>
 {% endblock %}
+

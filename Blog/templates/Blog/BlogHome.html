@@ -10,7 +10,7 @@
 
 {% block body %}
 
-<h1>Blog Home Page</h1>
+<h1>Blog Home Page</h1><br><br>
 {% for article in articles_obj %}
 <h2><a href="{% url 'Blog:article_selected' slug=article.slug %}" target="_blank">{{ article.title }}</a></h2>
 <h3>{{ article.body_preview }}</h3>
