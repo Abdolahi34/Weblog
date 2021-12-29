@@ -39,5 +39,5 @@ def login_view(request):
 def logout_view(request):
     if request.method == 'POST':
         logout(request)
-        return HttpResponse('You are logedout.')
+        return render(request, 'Accounts/Logout.html')
 

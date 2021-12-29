@@ -5,6 +5,10 @@
 
 {% block body %}
 <p></p>
-<p><a href="{%url 'Accounts:signup'%}" target="_blank">Signup Page</a></p>
-<p><a href="{%url 'Accounts:login'%}" target="_blank">Login Page</a></p>
+{% if user.is_authenticated %}
+<h1>You are already logged in.</h1>
+<meta http-equiv="refresh" content="3;url={% url 'Blog:blog_list' %}" />
+{% else %}
+<p>Please Login or Signup.</p>
+{% endif %}
 {% endblock %}

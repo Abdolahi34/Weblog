@@ -21,7 +21,9 @@ def create_article(request):
     if request.method == 'POST':
         form = forms.CreateArticle(request.POST, request.FILES)
         if form.is_valid():
-            # save
+            form_ins = form.save(commit=False)
+            form_ins.author = request.user
+            form.save()
             return redirect('Blog:blog_list')
     else:
         form = forms.CreateArticle()

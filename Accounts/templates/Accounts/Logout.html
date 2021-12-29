@@ -1,0 +1,8 @@
+{% extends 'Base.html' %}
+
+{% block title %}You are Logged out.{% endblock %}
+
+{% block body %}
+<h1>You are Logged out.</h1>
+<meta http-equiv="refresh" content="3;url={% url 'Blog:blog_list' %}" />
+{% endblock %}
